@@ -1,0 +1,13 @@
+{% extends "base2.html" %}
+
+{% block title %}Condition Example{% endblock %}
+
+{% block content %}
+<h2>Condition Demo</h2>
+
+{% if score >= 50 %}
+    <p>Congratulations! You passed with a score of {{ score }}.</p>
+{% else %}
+    <p>Sorry, you failed. Your score was {{ score }}.</p>
+{% endif %}
+{% endblock %}

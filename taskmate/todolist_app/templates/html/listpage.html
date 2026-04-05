@@ -1,0 +1,34 @@
+{% extends "base2.html" %}
+
+{% block title %}Items List{% endblock %}
+
+{% block content %}
+<h2>Items Table</h2>
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td>{{ forloop.counter }}</td> <!--observe carefully-->
+        <td>{{ item }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="2">No items available</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+
+<!--In Django templates, forloop is a special variable available inside a {% for %} loop. 
+It gives you useful information about the current iteration.
+forloop.counter: This variable provides the current iteration count, starting from 1.
+
+forloop.counter 	1	Current iteration (1-based)
+forloop.counter0	0	Current iteration (0-based)
+forloop.revcounter	n	Countdown from total length (1-based)
+forloop.revcounter0	n-1	Countdown from total length (0-based)
+-->
